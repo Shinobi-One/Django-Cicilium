@@ -1,0 +1,25 @@
+{%extends 'core.html' %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static '' %}?version={{css_version}}">
+{% endblock stylesheet%}
+
+{% block body %}
+
+    <h4><a href ="{% url "app:home" %}">Home-Page</a></h4>
+
+    
+    {% for articles in article%}
+        <img src= "{{articles.thumbnail.url}}" alt="{{articles.title}}" wide="500" height="500"/>
+        <h1> <a  href=" {%url 'app:detail' articles.slug %}">{{articles.title}}</a> </h1>
+        <h3>{{articles.published_at}}</h3>
+        <h2>{{articles.description}}</h2>
+    {%endfor%}
+
+
+{% endblock body %}
+
+{% block scripts %}
+    <script src="{% static '' %}?version={{ js_version }}" type="module"></script>
+{% endblock scripts %}

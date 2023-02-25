@@ -1,0 +1,13 @@
+
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static '' %}?version={{css_version}}">
+{% endblock stylesheet%}
+
+{% block body %}
+{% endblock body %}
+
+{% block scripts %}
+    <script src="{% static ''%}?version={{ js_version }}" type="module"></script>
+{% endblock scripts %}

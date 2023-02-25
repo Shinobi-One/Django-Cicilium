@@ -1,0 +1,17 @@
+{% extends 'core.html' %}
+
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static '' %}?version={{css_version}}">
+{% endblock stylesheet%}
+
+{% block body %}
+    {%for articles in article%}
+        {%include "first_app/first_page.html" %}
+    {%endfor%}
+{% endblock body %}
+
+{% block scripts %}
+    <script src="{% static ''%}?version={{ js_version }}" type="module"></script>
+{% endblock scripts %}
